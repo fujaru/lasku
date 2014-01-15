@@ -13,6 +13,7 @@ This project is still under development and not ready for production use. You ma
 
 Features (Goals to be precise)
 -------------------------------
+- Easy installation/upgrade
 - Can be installed on web server or as a standalone application
 - Supports Windows, Linux, Mac OS X
 - Multiple currency
@@ -28,11 +29,13 @@ Features (Goals to be precise)
 - Multiple users
 - PayPal integration
 - Multi-language
+- Themeable
 
 
 System Requirements
 --------------------
-To be written...
+- PHP 5.3.3 or newer
+- MySQL 4.1.3 or newer
 
 
 Installation
