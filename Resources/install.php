@@ -21,6 +21,15 @@ else
 	
 define('BASEURL', preg_replace('/^(.*\\/)[^\\/]*$/', '$1', $_SERVER['SCRIPT_NAME']));
 
+// Disable installer on existing installed system, unless install key is provided
+if(file_exists(APPPATH.'config/lasku.version'.EXT)) {
+	$installer_params = include APPPATH.'config/lasku.installer'.EXT;
+	if(@$_REQUEST['key'] != $installer_params['install-key']) {
+		include INSTPATH.'views/maintenance'.EXT;
+		exit;
+	}
+}
+
 // Check action
 switch(@$_POST['action']) {
 	// Welcome screen, 

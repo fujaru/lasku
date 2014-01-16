@@ -212,7 +212,30 @@ $init_defaults = array(
 	'base_url' => BASEURL,
 	'index_file' => 'index.php',
 );
+if($ver_exists AND file_exists(APPPATH.'config/bootstrap.init'.EXT)) {
+	$init_own = include APPPATH.'config/bootstrap.init'.EXT;
+	$init_defaults = array_merge($init_defaults, $init_own);
+}
 $init = array_merge($init_defaults, @isset($_POST['init']) ? $_POST['init'] : array());
+$database_defaults = array(
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'lasku',
+);
+if($ver_exists AND file_exists(APPPATH.'config/database'.EXT)) {
+	$database_own = include APPPATH.'config/database'.EXT;
+	$database_defaults = array_merge($database_defaults, $database_own['default']['connection']);
+}
+$database = array_merge($database_defaults, @isset($_POST['database']) ? $_POST['database'] : array());
+
+$timezone = include INSTPATH.'defaults/bootstrap.timezone'.EXT;
+if($ver_exists AND file_exists(APPPATH.'config/bootstrap.timezone'.EXT)) {
+	$timezone = include APPPATH.'config/bootstrap.timezone'.EXT;
+}
+
+// Get timezone lise
+$timezones = include INSTPATH.'defaults/timezones'.EXT;
 
 // Render
 include INSTPATH.'views/test'.EXT;

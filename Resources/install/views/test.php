@@ -73,7 +73,7 @@ $step = 'test';
 			</i></p>
 			
 			<p>
-				<label><input type="checkbox" id="reconfChangeCbx" onchange="reconfChange(this);" />Reconfigure basic settings</label>
+				<label><input type="checkbox" id="reconfChangeCbx" name="force-reconf" onchange="reconfChange(this);" />Reconfigure basic settings</label>
 			</p>
 		<?php endif; ?>
 		
@@ -101,23 +101,35 @@ $step = 'test';
 					</td>
 				</tr>
 				<tr>
+					<th>Timezone</th>
+					<td>
+						<select name="timezone" class="config-input">
+							<?php foreach($timezones as $item) : ?>
+							<option <?= $timezone == $item ? 'selected="selected"' : '' ?>><?=$item?></option>
+							<?php endforeach; ?>
+						</select>
+					</td>
+				</tr>
+				<tr>
 					<td colspan="2"><hr /></td>
 				</tr>
 				<tr>
 					<th>Database Hostname</th>
-					<td><input type="text" class="config-input" name="database[hostname]" value="localhost" /></td>
+					<td><input type="text" class="config-input" name="database[hostname]" value="<?=$database['hostname']?>" /></td>
 				</tr>
 				<tr>
 					<th>Database Username</th>
-					<td><input type="text" class="config-input" name="database[username]" value="" /></td>
+					<td><input type="text" class="config-input" name="database[username]" value="<?=$database['username']?>" /></td>
 				</tr>
 				<tr>
 					<th>Database Password</th>
-					<td><input type="password" class="config-input" name="database[password]" value="" /></td>
+					<td>
+						<input type="password" class="config-input" name="database[password]" value="<?=$database['password']?>" />
+					</td>
 				</tr>
 				<tr>
 					<th>Database Name</th>
-					<td><input type="text" class="config-input" name="database[database]" value="" /></td>
+					<td><input type="text" class="config-input" name="database[database]" value="<?=$database['database']?>" /></td>
 				</tr>
 			</table>
 		</div>

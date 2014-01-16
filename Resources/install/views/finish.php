@@ -37,7 +37,7 @@ $step = 'finish';
 		</p>
 		
 		<p>
-			You can login to the application using 
+			First time login can be done using 
 			the following user: <br />
 			Username: <b><code><?=$admin_user?></code></b> &nbsp;
 			Password: <b><code><?=$admin_pass?></code></b>
@@ -47,11 +47,19 @@ $step = 'finish';
 			Don't forget to change the password once you're logged in.
 		</p>
 		
-		<p>
-			The installer script is now disabled. Please consult 
-			<a href="<?=BASEURL?>docs">User Documentation</a> for details 
-			if you want to rerun the installation script again.
-		</p>
+		<?php if($installer_disabled) : ?>
+			<p>
+				<b>Note:</b> The installer script is now disabled. Please consult 
+				<a href="<?=BASEURL?>docs">User Documentation</a> for details 
+				if you want to rerun the installation script again.
+			</p>
+		<?php else : ?>
+			<p>
+				<b>Note:</b> Seems like we couldn't automatically disable the installer. 
+				You will need to manually remove <b>/install.php</b> 
+				file before you can login.
+			</p>
+		<?php endif; ?>
 		
 		<form action="<?=BASEURL?>" method="post">
 			<p><input type="submit" value="Go to Login Page" /></p>
