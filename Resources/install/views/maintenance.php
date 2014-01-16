@@ -5,12 +5,36 @@
 <head>
 	<?php include INSTPATH.'views/templates/meta'.EXT; ?>
 	<style type="text/css">
+		@keyframes break-show {
+			0% {
+				height: 200%;
+				overflow: hidden;
+			}
+			
+			50% {
+				height: 90%;
+			}
+			
+			100% {
+				height: 100%;
+				overflow: auto;
+			}
+		}
+		
+		#Main .wrapper {
+			overflow: hidden;
+		}
+
 		#CenterPanel {
 			display: table;
 			height: 100%;
 			width: 100%;
 			max-width: 400px;
 			margin: auto;
+			animation-name: break-show;
+			animation-duration: 1s;
+			-moz-animation-name: break-show;
+			-moz-animation-duration: 1s;
 		}
 		#CenterPanel .wrapper {
 			display: table-cell;
@@ -40,9 +64,9 @@
 		
 		<p class="note">
 			<b>Note for Administrators:</b>
-			If you unintentionally seeing this message, you might have 
-			not disabled the installer script. Please consult user 
-			documentation for more information.
+			If you're unintentionally seeing this message, or just finished the
+			installation, you might have not disabled the installer script. 
+			Please consult user documentation for details.
 		</p>
 		
 		<p><small>&copy; 2014 Fajar Chandra.</small></p>

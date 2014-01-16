@@ -44,6 +44,7 @@ $step = 'install';
 		</p>
 		
 		<form name="InstallForm" method="post">
+			<input type="hidden" name="key" value="<?=$install_key?>" />
 			<input type="hidden" name="action" value="install" />
 		</form>
 		

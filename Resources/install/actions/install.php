@@ -30,8 +30,6 @@ function query_mysql(array $params, $input_file)
  */
 function query_pdo(array $params, $input_file)
 {
-	pdo_connect($params);
-	
 	$sql = file_get_contents($input_file);
 	return $pdo->exec($sql);
 }
@@ -62,7 +60,7 @@ function execute()
 	$params = $conf_database['default']['connection'];
 	
 	// Setup connection
-	//pdo_connect();
+	pdo_connect($params);
 	
 	// Try to use mysql program from shell
 	if(function_exists('shell_exec')) {
@@ -95,7 +93,7 @@ function execute()
 		// Pre-PHP script
 		if(file_exists(INSTPATH.'upgrades/'.$releases[$i].'.pre'.EXT)) {
 			call_user_func(function($i) {
-				global $releases;
+				global $releases, $pdo;
 				include INSTPATH.'upgrades/'.$releases[$i].'.pre'.EXT;
 			}, $i);
 			$skipped = false;
@@ -112,7 +110,7 @@ function execute()
 		// Post-PHP script
 		if(file_exists(INSTPATH.'upgrades/'.$releases[$i].'.post'.EXT)) {
 			call_user_func(function($i) {
-				global $releases;
+				global $releases, $pdo;
 				include INSTPATH.'upgrades/'.$releases[$i].'.post'.EXT;
 			}, $i);
 			$skipped = false;

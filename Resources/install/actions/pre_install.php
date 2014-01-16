@@ -42,5 +42,8 @@ elseif(isset($_POST['force-reconf'])) {
 	write_config(APPPATH.'config/database'.EXT, $database);
 }
 
+$install_params = include APPPATH.'config/lasku.installer'.EXT;
+$install_key = $install_params['install-key'];
+
 // Render
 include INSTPATH.'views/pre_install'.EXT;
