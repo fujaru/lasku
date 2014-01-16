@@ -1,0 +1,84 @@
+/**
+ * Lasku Documentation Stylesheet
+ * 
+ * Stylesheet Specific to Lasku Documentation
+ * 
+ * @author  Fajar Chandra
+ * @since   0.1.0
+ */
+
+@import url('base.css');
+
+/* GENERIC TAGS
+ * ****************************************************************** */
+pre {
+	background: #fff;
+	padding: 10px;
+	border: solid 1px #ddd;
+}
+
+/* SPECIFIC IDS
+ * ****************************************************************** */
+#Sidebar {
+	width: 160px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	padding: 20px;
+	overflow: auto;
+}
+
+#Sidebar:after {
+	display: block;
+	margin-bottom: 20px;
+	content: ' ';
+}
+
+#Sidebar > ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#Sidebar > ul > li {
+	font-weight: bold;
+}
+
+#Sidebar > ul > li ul {
+	padding: 0 0 0 25px;
+	margin: 0;
+	list-style: decimal;
+	font-weight: normal;
+}
+
+#Sidebar ul > li ul > li {
+}
+
+#MainContent {
+	position: absolute;
+	top: 0;
+	left: 200px;
+	bottom: 0;
+	right: 0;
+	padding: 20px;
+	overflow: auto;
+}
+
+#MainContent:after {
+	display: block;
+	margin-bottom: 20px;
+	content: ' ';
+}
+
+#MainContent #PathInfo {
+	font-size: 0.8em;
+}
+
+#MainContent .copyright {
+	color: #888;
+	font-size: 0.8em;
+	border-top: solid 1px #aaa;
+	margin-top: 20px;
+	padding-top: 10px;
+}

@@ -1,0 +1,224 @@
+/**
+ * Base Lasku Stylesheet
+ * 
+ * Global stylesheet used as the base for Lasku application, Installer, 
+ * and Documentation. Duplicates of this file could be found at:
+ * /static/css/base.css
+ * /docs/static/css/base.css
+ * /install/views/templates/base.css
+ * 
+ * @author  Fajar Chandra
+ * @since   0.1.0
+ */
+
+/* ANIMATION KEYFRAMES
+ * ****************************************************************** */
+@keyframes modal-show {
+	0% {
+		bottom: -100%;
+	}
+	
+	50% {
+		top: -10%;
+		bottom: 0;
+	}
+	
+	100% {
+		bottom: 0;
+	}
+}
+
+/* GENERIC TAGS
+ * ****************************************************************** */
+html, body {
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	background: #333;
+	color: #eee;
+	margin: 0;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+h1 {
+	font-size: 1.75em;
+	line-height: 1.25em
+}
+
+h2 {
+	font-size: 1.4em;
+}
+
+h3 {
+	font-size: 1.2em;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child {
+	margin-top: 0;
+}
+
+a {
+	color: #1784e3;
+	text-decoration: none;
+	transition: color .2s;
+}
+
+a:hover {
+	color: #105fa3;
+}
+
+/* GENERIC CLASSES
+ * ****************************************************************** */
+.error {
+	color: #e32417;
+}
+
+.success {
+	color: #15a310;
+}
+
+/* GENERIC TAG-SPECIFIC CLASSES
+ * ****************************************************************** */
+table.table tr td {
+	padding: 2px 5px;
+}
+
+table.table tr:nth-child(odd) td {
+	background: #fff;
+}
+table.table tr:nth-child(even) td {
+	background: #eee;
+}
+
+table.form tr th {
+	text-align: left;
+	font-weight: bold;
+}
+
+table.form tr th:after {
+	content: ':';
+}
+
+noscript.modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	padding: 20px;
+	color: #eee;
+	background: #333;
+	background: rgba(0, 0, 0, 0.9);
+	z-index: 1000;
+	animation-name: modal-show;
+	animation-duration: 1s;
+	-moz-animation-name: modal-show;
+	-moz-animation-duration: 1s;
+}
+
+noscript.modal > .wrapper {
+	display: table;
+	width: 100%;
+	height: 100%;
+	max-width: 400px;
+	margin: auto;
+}
+
+noscript.modal > .wrapper > .inner-wrapper {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+/* SPECIFIC IDS
+ * ****************************************************************** */
+#NavBar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 40px;
+	background: #333;
+	color: #ccc;
+}
+
+#NavBar > .left-side {
+}
+
+#NavBar .menu {
+	line-height: 40px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	cursor: default;
+}
+
+#NavBar .menu li {
+	display: inline;
+}
+
+#NavBar .menu li > a,
+#NavBar .menu li > span {
+	display: inline-block;
+	padding: 0 15px;
+	transition: color .2s, background .2s;
+	color: #ddd;
+}
+
+#NavBar .menu li > a:hover {
+	cursor: pointer;
+}
+
+#NavBar .menu li > a:hover,
+#NavBar .menu li.selected > a,
+#NavBar .menu li.selected > span {
+	background: #666;
+	color: #fff;
+}
+
+#Main {
+	position: absolute;
+	top: 40px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	box-shadow: 0 -1px 10px #111;
+	border-top: solid 2px #fff;
+	border-radius: 10px;
+	background: #eee;
+	color: #333;
+}
+
+#Main > .wrapper {
+	overflow: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 20px;
+	z-index: 1;
+}
+
+#Main #MainGradientT {
+	position: absolute;
+	top: -100px;
+	width: 100%;
+	height: 100px;
+	box-shadow: 0 -1px 50px #fff;
+	z-index: 0;
+}
+
+#Main #MainGradientB {
+	position: absolute;
+	bottom: -100px;
+	width: 100%;
+	height: 100px;
+	box-shadow: 0 -1px 150px #999;
+	z-index: 0;
+}

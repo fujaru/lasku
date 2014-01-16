@@ -1,4 +1,10 @@
-The MIT License (MIT)
+# License Agreement
+
+Lasku Invoicing System is released under The MIT License.
+
+- - - -
+
+## The MIT License (MIT)
 
 Copyright (c) 2014 Fajar Yoseph Chandra
 
