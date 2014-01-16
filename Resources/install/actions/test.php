@@ -4,6 +4,33 @@
 /* BEGIN TESTING */
 
 $tests = array();
+$releases = include INSTPATH.'releases'.EXT;
+$ver_exists = false;
+
+// Current Lasku Version
+$tests['version'] = array(
+	'label' => "Existing Lasku Installation",
+);
+if(!file_exists(APPPATH.'config/lasku.version'.EXT)) {
+	$tests['version']['value'] = 'Not Found';
+}
+elseif(version_compare(include APPPATH.'config/lasku.version'.EXT, end($releases), '<=')) {
+	$ver_exists = true;
+	$ver_now = include APPPATH.'config/lasku.version'.EXT;
+	$ver_new = end($releases);
+	if($ver_now == $ver_new) {
+		$tests['version']['value'] = "{$ver_now} to be reinstalled with the same version";
+	}
+	else {
+		$tests['version']['value'] = "{$ver_now} to be upgraded to {$ver_new}";
+	}
+}
+else {
+	$ver_now = include APPPATH.'config/lasku.version'.EXT;
+	$ver_new = end($releases);
+	$tests['version']['error'] = true;
+	$tests['version']['value'] = "Currently installed version {$ver_now} is newer than the latest version provided by this installer {$ver_new}";
+}
 
 // PHP version
 $tests['php'] = array(
@@ -15,6 +42,18 @@ if(version_compare(PHP_VERSION, '5.3.3', '>=')) {
 else {
 	$tests['php']['error'] = true;
 	$tests['php']['value'] = "Lasku requires PHP version 5.3.3 or newer, this version is ".PHP_VERSION;
+}
+
+// Installer file
+$tests['installer'] = array(
+	'label' => "Installer Script",
+);
+if(is_dir(DOCROOT) AND file_exists(DOCROOT.'install'.EXT) AND is_writable(DOCROOT.'install'.EXT)) {
+	$tests['installer']['value'] = DOCROOT.'install'.EXT;
+}
+else {
+	$tests['installer']['error'] = true;
+	$tests['installer']['value'] = "File <code>".DOCROOT.'install'.EXT."</code> is not writable.";
 }
 
 // Config dir
@@ -169,9 +208,11 @@ else {
 
 /* CONFIGURATIONS */
 
-$init = @$_POST['init'];
-if(!isset($init['base_url']))
-	$init['base_url'] = preg_replace('/^(.*\\/)[^\\/]*$/', '$1', $_SERVER['SCRIPT_NAME']);
+$init_defaults = array(
+	'base_url' => BASEURL,
+	'index_file' => 'index.php',
+);
+$init = array_merge($init_defaults, @isset($_POST['init']) ? $_POST['init'] : array());
 
 // Render
 include INSTPATH.'views/test'.EXT;

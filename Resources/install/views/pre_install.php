@@ -24,19 +24,26 @@ $step = 'install';
 			color: #aaa;
 		}
 	</style>
+	<script type="text/javascript">
+		function onload() {
+			setTimeout(function() {
+				document.forms['InstallForm'].submit();
+			}, 1000);
+		}
+	</script>
 </head>
 
-<body>
+<body onload="onload();">
 	<?php include INSTPATH.'views/templates/header'.EXT; ?>
 	
 	<div id="CenterPanel"><div class="wrapper">
 		
 		<h1>Lasku Installation</h1>
 		<p>
-			Installing/upgrading Lasku. Please be patient...
+			Installing/upgrading Lasku <?=end($releases)?>. Please be patient...
 		</p>
 		
-		<form method="post">
+		<form name="InstallForm" method="post">
 			<input type="hidden" name="action" value="install" />
 		</form>
 		

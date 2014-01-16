@@ -3,7 +3,11 @@ Lasku Invoicing System
 
 Web-based invoicing system for freelancers and small businesses, inspired by FusionInvoice.
 
-The goal of Lasku is to provide a simple, easy to install, easy to use, and powerful invoicing system for small businesses. Although it's inspired by FusionInvoice (it's a great invoicing system, you should check it out!), this project is built from ground up using Kohana and TideSDK frameworks.
+
+The goal of Lasku is to provide a professional and powerful invoicing system 
+yet simple, easy to install and easy to use, for daily invoicing use by freelancers and small businesses.
+Although it's inspired by FusionInvoice (that's a great invoicing system, you should check it out!), 
+this project is built from ground up using Kohana and TideSDK frameworks.
 
 
 Notice

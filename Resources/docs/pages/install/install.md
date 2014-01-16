@@ -30,6 +30,34 @@ Password: admin
 
 Do not forget to change the default password once you are logged in.
 
+### Removing index.php
+
+This step is optional but can make URLs looking prettier. It will change 
+URLs which look like this:  
+`http://your-domain.com/path/to/lasku/index.php/invoice`  
+into this:  
+`http://your-domain.com/path/to/lasku/invoice`
+
+To do this, it requires Apache web server with **mod_rewrite** module enabled, plus 
+directory level configuration a.k.a. **.htaccess** enabled.
+
+During installation process, you will be presented with a page allowing 
+you to input basic configurations. There is an option labeled as **"Index File"** 
+with the default value `index.php`. Set the value to **blank** and 
+you're all set.
+
+If you already have an existing installation of Lasku, the Index File 
+configuration option can be set manually by editing **`/application/config/bootstrap.init.php`** 
+file. Fine an option named **'index_file'** like the following:
+```
+	'index_file' => 'index.php',
+```
+Change its value to **`''`** (empty text), become:
+```
+	'index_file' => '',
+```
+
+
 ### Re-running the Installer
 
 Once the installation finishes, the installer will be disabled. To rerun 
@@ -39,9 +67,7 @@ the installer, follow the steps:
 2. Open **`/application/config/lasku.installer.php`** and find an option 
    named **'install-key'** like the following:
 ```
-return array(
 	'install-key' => "130ba8ff",
-);
 ```
 Take note on its value. We will use it later. On the above example, the 
 value is `130ba8ff`.

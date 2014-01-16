@@ -18,6 +18,8 @@ if(is_dir(__DIR__.'/install/'))
 	define('INSTPATH', __DIR__.'/install/');
 else 
 	exit('Installation directory does not exists!');
+	
+define('BASEURL', preg_replace('/^(.*\\/)[^\\/]*$/', '$1', $_SERVER['SCRIPT_NAME']));
 
 // Check action
 switch(@$_POST['action']) {
@@ -35,6 +37,11 @@ switch(@$_POST['action']) {
 	// Pre-install
 	case 'preinst':
 		require INSTPATH.'actions/pre_install'.EXT;
+		break;
+		
+	// Pre-install
+	case 'install':
+		require INSTPATH.'actions/install'.EXT;
 		break;
 		
 }
