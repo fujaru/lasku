@@ -56,7 +56,7 @@ $step = 'test';
 		<?php foreach($tests as $test) : ?>
 			<tr>
 				<td><?=$test['label']?></td>
-				<td class="<?= @$test['error'] ? 'error' : 'success' ?>"><?=$test['value']?></td>
+				<td class="<?= @$test['warning'] ? 'warning' : (@$test['error'] ? 'error' : 'success') ?>"><?=$test['value']?></td>
 			</tr>
 		<?php endforeach; ?>
 	</table>

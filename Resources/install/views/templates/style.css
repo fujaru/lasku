@@ -86,6 +86,10 @@ noscript.modal > .wrapper > .inner-wrapper {
 	color: #e32417;
 }
 
+.warning {
+	color: #a39010;
+}
+
 .success {
 	color: #15a310;
 }

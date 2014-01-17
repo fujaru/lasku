@@ -64,8 +64,8 @@
 		
 		<p class="note">
 			<b>Note for Administrators:</b>
-			If you're unintentionally seeing this message, or just finished the
-			installation, you might have not disabled the installer script. 
+			The installer script disables application access. You'll 
+			need disable it first once maintenance is done.
 			Please consult user documentation for details.
 		</p>
 		

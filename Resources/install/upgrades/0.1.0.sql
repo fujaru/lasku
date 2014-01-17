@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 16, 2014 at 11:40 AM
+-- Generation Time: Jan 17, 2014 at 04:58 AM
 -- Server version: 5.5.33-1
 -- PHP Version: 5.5.7-2
 
@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS `client` (
   `city` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT 'City name',
   `state` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT 'State/province',
   `zip` varchar(15) DEFAULT NULL COMMENT 'Zip/postal code',
+  `country` varchar(255) DEFAULT NULL COMMENT 'Country name',
   `contact_name` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT 'Contact person',
   `phone` varchar(25) DEFAULT NULL COMMENT 'Phone number',
   `mobile` varchar(25) DEFAULT NULL COMMENT 'Mobile phone',
@@ -39,6 +40,54 @@ CREATE TABLE IF NOT EXISTS `client` (
   `entry_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Clients' AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `company`
+--
+
+CREATE TABLE IF NOT EXISTS `company` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT 'Company name',
+  `address1` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT 'Address line 1',
+  `address2` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT 'Address line 2',
+  `city` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT 'City name',
+  `state` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT 'State/province',
+  `zip` varchar(15) DEFAULT NULL COMMENT 'Zip/postal code',
+  `country` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT 'Country name',
+  `phone` varchar(25) DEFAULT NULL COMMENT 'Phone number',
+  `mobile` varchar(25) DEFAULT NULL COMMENT 'Mobile phone',
+  `fax` varchar(25) DEFAULT NULL COMMENT 'Fax number',
+  `email` varchar(100) CHARACTER SET utf8 DEFAULT NULL COMMENT 'Email address',
+  `website` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT 'Web address',
+  `entry_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `entry_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Owner company information' AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `company`
+--
+
+INSERT INTO `company` (`id`, `name`, `address1`, `address2`, `city`, `state`, `zip`, `country`, `phone`, `mobile`, `fax`, `email`, `website`, `entry_time`, `entry_by`) VALUES
+(1, 'Awesome Company', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2014-01-17 04:53:35', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `config`
+--
+
+CREATE TABLE IF NOT EXISTS `config` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL COMMENT 'Configuration name',
+  `value` text COMMENT 'Configuration value',
+  `comment` varchar(255) DEFAULT NULL COMMENT 'Comments',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Application configurations' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -363,24 +412,24 @@ ALTER TABLE `invoice_detail`
 -- Constraints for table `invoice_group`
 --
 ALTER TABLE `invoice_group`
-  ADD CONSTRAINT `invoice_group_ibfk_overdue_email` FOREIGN KEY (`overdue_email_id`) REFERENCES `email_template` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `invoice_group_ibfk_default_email` FOREIGN KEY (`default_email_id`) REFERENCES `email_template` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `invoice_group_ibfk_overdue_email` FOREIGN KEY (`overdue_email_id`) REFERENCES `email_template` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `invoice_group_ibfk_paid_email` FOREIGN KEY (`paid_email_id`) REFERENCES `email_template` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Constraints for table `item_lookup`
 --
 ALTER TABLE `item_lookup`
-  ADD CONSTRAINT `item_lookup_ibfk_tax` FOREIGN KEY (`tax_id`) REFERENCES `tax` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `item_lookup_ibfk_currency` FOREIGN KEY (`currency_id`) REFERENCES `currency` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `item_lookup_ibfk_currency` FOREIGN KEY (`currency_id`) REFERENCES `currency` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `item_lookup_ibfk_tax` FOREIGN KEY (`tax_id`) REFERENCES `tax` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Constraints for table `payment`
 --
 ALTER TABLE `payment`
-  ADD CONSTRAINT `payment_ibfk_method` FOREIGN KEY (`payment_method_id`) REFERENCES `payment_method` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `payment_ibfk_currency` FOREIGN KEY (`currency_id`) REFERENCES `currency` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `payment_ibfk_invoice` FOREIGN KEY (`invoice_id`) REFERENCES `invoice` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `payment_ibfk_invoice` FOREIGN KEY (`invoice_id`) REFERENCES `invoice` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `payment_ibfk_method` FOREIGN KEY (`payment_method_id`) REFERENCES `payment_method` (`id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `quote`
@@ -396,5 +445,5 @@ ALTER TABLE `quote`
 -- Constraints for table `quote_detail`
 --
 ALTER TABLE `quote_detail`
-  ADD CONSTRAINT `quote_detail_ibfk_tax` FOREIGN KEY (`tax_id`) REFERENCES `tax` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `quote_detail_ibfk_quote` FOREIGN KEY (`quote_id`) REFERENCES `quote` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `quote_detail_ibfk_quote` FOREIGN KEY (`quote_id`) REFERENCES `quote` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `quote_detail_ibfk_tax` FOREIGN KEY (`tax_id`) REFERENCES `tax` (`id`) ON UPDATE CASCADE;

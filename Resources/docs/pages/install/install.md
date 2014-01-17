@@ -30,6 +30,12 @@ Password: admin
 
 Do not forget to change the default password once you are logged in.
 
+If after installation you are seeing "Under Maintenance" message, this is 
+because the installer was unable to automatically disable the installer 
+script by removing **`/install.php`** file. You can disable it manually 
+by locating your installation directory, and remove/rename the file **`/install.php`**.
+When `/install.php` does not exists, Lasku will work normally.
+
 ### Removing index.php
 
 This step is optional but can make URLs looking prettier. It will change 

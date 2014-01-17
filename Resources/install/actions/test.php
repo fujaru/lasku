@@ -48,12 +48,12 @@ else {
 $tests['installer'] = array(
 	'label' => "Installer Script",
 );
-if(is_dir(DOCROOT) AND file_exists(DOCROOT.'install'.EXT) AND is_writable(DOCROOT.'install'.EXT)) {
-	$tests['installer']['value'] = DOCROOT.'install'.EXT;
+if(is_dir(DOCROOT) AND is_writable(DOCROOT)) {
+	$tests['installer']['value'] = "The installer script can be automatically disabled after installation.";
 }
 else {
-	$tests['installer']['error'] = true;
-	$tests['installer']['value'] = "File <code>".DOCROOT.'install'.EXT."</code> is not writable.";
+	$tests['installer']['warning'] = true;
+	$tests['installer']['value'] = "After installation finishes, please manually disable the installer script.";
 }
 
 // Config dir
