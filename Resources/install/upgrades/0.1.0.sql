@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS `client` (
   `email` varchar(100) CHARACTER SET utf8 DEFAULT NULL COMMENT 'Email address',
   `website` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT 'Web address',
   `notes` text COMMENT 'Notes for this client',
+  `is_active` BOOLEAN NOT NULL DEFAULT TRUE COMMENT 'Whether this client is active',
   `entry_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `entry_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -214,14 +215,14 @@ CREATE TABLE IF NOT EXISTS `invoice_status` (
   `status` varchar(50) CHARACTER SET utf8 NOT NULL COMMENT 'Status name',
   `color` char(6) NOT NULL DEFAULT '888888' COMMENT 'Status color in hex',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Invoice statuses' AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Invoice statuses. 0 is reserved for draft.' AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `invoice_status`
 --
 
 INSERT INTO `invoice_status` (`id`, `status`, `color`) VALUES
-(1, 'Draft', '888888');
+(0, 'Draft', '888888');
 
 -- --------------------------------------------------------
 
@@ -344,14 +345,14 @@ CREATE TABLE IF NOT EXISTS `quote_status` (
   `status` varchar(50) CHARACTER SET utf8 NOT NULL COMMENT 'Status name',
   `color` char(6) NOT NULL DEFAULT '888888' COMMENT 'Status color in hex',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Quotation statuses' AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Quotation statuses. 0 is reserved for draft.' AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `quote_status`
 --
 
 INSERT INTO `quote_status` (`id`, `status`, `color`) VALUES
-(1, 'Draft', '888888');
+(0, 'Draft', '888888');
 
 -- --------------------------------------------------------
 

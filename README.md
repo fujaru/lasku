@@ -6,8 +6,6 @@ Web-based invoicing system for freelancers and small businesses, inspired by Fus
 
 The goal of Lasku is to provide a professional and powerful invoicing system 
 yet simple, easy to install and easy to use, for daily invoicing use by freelancers and small businesses.
-Although it's inspired by FusionInvoice (that's a great invoicing system, you should check it out!), 
-this project is built from ground up using Kohana and TideSDK frameworks.
 
 
 Notice
@@ -15,9 +13,26 @@ Notice
 This project is still under development and not ready for production use. You may encounter bugs, missing features, and funky funky stuffs.
 
 
-Features (Goals to be precise)
--------------------------------
+Ultimate Goals
+---------------
+- Easy to install
+- Easy to use
+- Looking good at all times
+- Professionally done with high quality system
+- Featureful for freelancers and small businesses
+- Extensible
+- A system that won't be a troublemaker
+
+
+Features
+---------
 - Easy installation/upgrade
+- Unicode support
+- Skin support
+
+
+Planned Features (Goals to be precise)
+---------------------------------------
 - Can be installed on web server or as a standalone application
 - Supports Windows, Linux, Mac OS X
 - Multiple currency
@@ -33,7 +48,6 @@ Features (Goals to be precise)
 - Multiple users
 - PayPal integration
 - Multi-language
-- Themeable
 
 
 System Requirements

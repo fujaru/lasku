@@ -1,7 +1,28 @@
+/**
+ * Base Lasku Stylesheet
+ * 
+ * Global stylesheet used as the base for Lasku application, Installer, 
+ * and Documentation. Duplicates of this file could be found at:
+ * /static/css/base.css
+ * /docs/static/css/base.css
+ * /install/views/templates/base.css
+ * 
+ * Please use /static/css/base.css as the base for editing related files
+ * to avoid conflicts.
+ * 
+ * @author  Fajar Chandra
+ * @since   0.1.0
+ */
+
+/* GENERIC ANIMATION KEYFRAMES
+ * ****************************************************************** */
+
+/* GENERIC TAGS
+ * ****************************************************************** */
 html, body {
 	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 	font-size: 14px;
-	line-height: 18px;
+	line-height: 20px;
 	background: #333;
 	color: #eee;
 	margin: 0;
@@ -10,12 +31,47 @@ html, body {
 	overflow: hidden;
 }
 
+h1 {
+	font-size: 1.75em;
+	line-height: 1.25em
+}
+
+h2 {
+	font-size: 1.4em;
+}
+
+h3 {
+	font-size: 1.2em;
+}
+
 h1:first-child,
 h2:first-child,
 h3:first-child {
 	margin-top: 0;
 }
 
+a {
+	color: #1784e3;
+	text-decoration: none;
+	transition: color .2s;
+}
+
+a:hover {
+	color: #105fa3;
+}
+
+/* GENERIC CLASSES
+ * ****************************************************************** */
+.error {
+	color: #e32417;
+}
+
+.success {
+	color: #15a310;
+}
+
+/* TAGS WITH CLASSES
+ * ****************************************************************** */
 table.table tr td {
 	padding: 2px 5px;
 }
@@ -36,7 +92,12 @@ table.form tr th:after {
 	content: ':';
 }
 
-@keyframes modal-show {
+/* CLASSES WITH SPECIFIC PURPOSES
+ * ****************************************************************** */
+
+/** Screen-blocking modal dialog **/
+
+@keyframes ScreenModalDialog {
 	0% {
 		bottom: -100%;
 	}
@@ -51,7 +112,7 @@ table.form tr th:after {
 	}
 }
 
-noscript.modal {
+.ScreenModalDialog {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -63,37 +124,27 @@ noscript.modal {
 	background: #333;
 	background: rgba(0, 0, 0, 0.9);
 	z-index: 1000;
-	animation-name: modal-show;
+	animation-name: ScreenModalDialog;
 	animation-duration: 1s;
-	-moz-animation-name: modal-show;
+	-moz-animation-name: ScreenModalDialog;
 	-moz-animation-duration: 1s;
 }
 
-noscript.modal > .wrapper {
+.ScreenModalDialog > .wrapper {
 	display: table;
 	width: 100%;
 	height: 100%;
-	max-width: 400px;
+	max-width: 450px;
 	margin: auto;
 }
 
-noscript.modal > .wrapper > .inner-wrapper {
+.ScreenModalDialog > .wrapper > .inner-wrapper {
 	display: table-cell;
 	vertical-align: middle;
 }
 
-.error {
-	color: #e32417;
-}
-
-.warning {
-	color: #a39010;
-}
-
-.success {
-	color: #15a310;
-}
-
+/* SPECIFIC IDS
+ * ****************************************************************** */
 #NavBar {
 	position: absolute;
 	top: 0;

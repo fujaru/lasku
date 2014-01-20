@@ -21,6 +21,11 @@
 			}
 		}
 		
+		#Main {
+			top: 0;
+			margin: 20px;
+		}
+		
 		#Main .wrapper {
 			overflow: hidden;
 		}
