@@ -88,7 +88,14 @@ CREATE TABLE IF NOT EXISTS `config` (
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Application configurations' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Application configurations' AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `config`
+--
+
+INSERT INTO `config` (`id`, `name`, `value`, `comment`, `update_time`) VALUES
+(1, 'skin', '', 'Name of skin to use. If blank or non-existing, the base skin will be use.', '2014-01-20 02:38:05');
 
 -- --------------------------------------------------------
 
