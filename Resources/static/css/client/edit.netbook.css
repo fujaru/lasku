@@ -1,0 +1,29 @@
+/**
+ * Stylesheet for Client Editor
+ * Adjustments for netbook
+ * 
+ * @author  Fajar Chandra
+ * @since   0.1.0
+ */
+
+.BasicInfo {
+	float: none;
+	width: auto;
+	margin-right: 0;
+}
+
+.ContactInfo table.form,
+.BasicInfo table.form {
+	width: 100%;
+}
+
+.ContactInfo table.form th,
+.BasicInfo table.form th {
+	width: 150px;
+}
+
+.ContactInfo input,
+.BasicInfo input {
+	width: 100%;
+	box-sizing: border-box;
+}

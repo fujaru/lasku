@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="24"
+   height="24"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   inkscape:export-filename="/home/fajar/Projects/Doublejar/lasku/Resources/static/img/icons/help-24.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"
+   sodipodi:docname="help.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="12.67725"
+     inkscape:cx="19.651656"
+     inkscape:cy="8.6065545"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:snap-bbox="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:bbox-nodes="true"
+     inkscape:object-paths="true"
+     inkscape:object-nodes="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:window-width="1366"
+     inkscape:window-height="710"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-1028.3622)">
+    <path
+       style="fill:#eeeeee;fill-opacity:1;stroke:none"
+       d="M 3 0 C 1.338 0 0 1.338 0 3 L 0 21 C 0 22.662 1.338 24 3 24 L 4 24 L 4 0 L 3 0 z M 5 0 L 5 24 L 21 24 C 22.662 24 24 22.662 24 21 L 24 3 C 24 1.338 22.662 0 21 0 L 5 0 z M 13.5625 4.78125 C 16.482497 4.78125 18.375 6.0000025 18.375 8.5 C 18.375 12.659996 14.65625 12.126253 14.65625 15.40625 L 14.65625 15.8125 L 12.1875 15.8125 L 12.1875 15.40625 C 12.1875 11.086254 15.96875 11.201248 15.96875 8.78125 C 15.96875 8.1012507 15.561248 7 13.28125 7 C 12.541251 7 11.582499 7.2175002 11.0625 7.4375 L 10.6875 7.5625 L 9.875 5.65625 L 10.21875 5.5 C 11.258749 4.9800005 12.442501 4.78125 13.5625 4.78125 z M 12.0625 16.875 L 14.65625 16.875 L 14.65625 19.21875 L 12.0625 19.21875 L 12.0625 16.875 z "
+       transform="translate(0,1028.3622)"
+       id="rect3817" />
+  </g>
+</svg>

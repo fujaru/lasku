@@ -1,0 +1,29 @@
+/**
+ * Stylesheet for Login Template.
+ * 
+ * @author  Fajar Chandra
+ * @since   0.1.0
+ */
+
+/* SPECIFIC IDS
+ * ****************************************************************** */
+#Main > .wrapper {
+	padding: 0;
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+#Main > .wrapper > .inner-wrapper {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#LoginFormContainer > .wrapper {
+	width: 400px;
+	margin: auto;
+}
+
+#LoginFormContainer table.form {
+	width: 100%;
+}

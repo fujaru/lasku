@@ -1,0 +1,14 @@
+/**
+ * Client List
+ * Adjustments for netbook screens
+ * 
+ * @author Fajar Chandra
+ * @since  0.1.0
+ */
+
+#ClientDetails {
+	top: 130px;
+}
+
+#ClientList.HasDetails {
+}

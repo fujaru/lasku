@@ -7,26 +7,15 @@
  * /docs/static/css/base.css
  * /install/views/templates/base.css
  * 
+ * Please use /static/css/base.css as the base for editing related files
+ * to avoid conflicts.
+ * 
  * @author  Fajar Chandra
  * @since   0.1.0
  */
 
-/* ANIMATION KEYFRAMES
+/* GENERIC ANIMATION KEYFRAMES
  * ****************************************************************** */
-@keyframes modal-show {
-	0% {
-		bottom: -100%;
-	}
-	
-	50% {
-		top: -10%;
-		bottom: 0;
-	}
-	
-	100% {
-		bottom: 0;
-	}
-}
 
 /* GENERIC TAGS
  * ****************************************************************** */
@@ -81,7 +70,7 @@ a:hover {
 	color: #15a310;
 }
 
-/* GENERIC TAG-SPECIFIC CLASSES
+/* TAGS WITH CLASSES
  * ****************************************************************** */
 table.table tr td {
 	padding: 2px 5px;
@@ -103,7 +92,27 @@ table.form tr th:after {
 	content: ':';
 }
 
-noscript.modal {
+/* CLASSES WITH SPECIFIC PURPOSES
+ * ****************************************************************** */
+
+/** Screen-blocking modal dialog **/
+
+@keyframes ScreenModalDialog {
+	0% {
+		bottom: -100%;
+	}
+	
+	50% {
+		top: -10%;
+		bottom: 0;
+	}
+	
+	100% {
+		bottom: 0;
+	}
+}
+
+.ScreenModalDialog {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -115,21 +124,21 @@ noscript.modal {
 	background: #333;
 	background: rgba(0, 0, 0, 0.9);
 	z-index: 1000;
-	animation-name: modal-show;
+	animation-name: ScreenModalDialog;
 	animation-duration: 1s;
-	-moz-animation-name: modal-show;
+	-moz-animation-name: ScreenModalDialog;
 	-moz-animation-duration: 1s;
 }
 
-noscript.modal > .wrapper {
+.ScreenModalDialog > .wrapper {
 	display: table;
 	width: 100%;
 	height: 100%;
-	max-width: 400px;
+	max-width: 450px;
 	margin: auto;
 }
 
-noscript.modal > .wrapper > .inner-wrapper {
+.ScreenModalDialog > .wrapper > .inner-wrapper {
 	display: table-cell;
 	vertical-align: middle;
 }

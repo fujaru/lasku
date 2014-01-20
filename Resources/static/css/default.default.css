@@ -1,0 +1,162 @@
+/**
+ * Default application stylesheet
+ * 
+ * @author Fajar Chandra
+ * @since  0.1.0
+ */
+
+fieldset {
+	margin-bottom: 20px;
+}
+
+/* Nav Bar */
+#NavBar .menu > li > a.icon {
+	overflow: hidden;
+	width: 24px;
+	color: transparent;
+	font-size: 0;
+	line-height: 40px;
+	vertical-align: middle;
+}
+
+#NavBar .menu > li.selected > a.icon,
+#NavBar .menu > li:hover > a.icon,
+#NavBar .menu > li > a.icon:hover {
+	background-color: #666;
+	color: transparent;
+}
+
+#NavBar .menu > li > a.logout {
+	background: url('../img/icons/logout-24.png') no-repeat center center;
+}
+
+#NavBar .menu > li > a.admin {
+	background: url('../img/icons/admin-24.png') no-repeat center center;
+}
+
+#NavBar .menu > li > a.help {
+	background: url('../img/icons/help-24.png') no-repeat center center;
+}
+
+/* Top Bar */
+#Main #TopBar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 40px;
+	background: #ddd;
+	background: linear-gradient(#eee, #ccc);
+	box-shadow: 0 1px 5px #888;
+	z-index: 2;
+	line-height: 40px;
+}
+
+#Main #TopBar h1 {
+	font-size: 18px;
+	cursor: default;
+	color: #666;
+	line-height: 40px;
+}
+
+#Main #TopBar .right-panel {
+	float: right;
+	padding: 0 20px 0 0;
+}
+
+#Main #TopBar .left-panel {
+	float: left;
+	padding: 0 0 0 20px;
+}
+
+#Main #TopBar #SearchForm {
+	display: inline-block;
+	line-height: 40px;
+	position: relative;
+}
+
+#Main #TopBar #SearchForm input[type=text] {
+	padding: 0 23px 0 2px;
+}
+
+#Main #TopBar #SearchForm input[type=submit] {
+	border: none;
+	padding: 0;
+	position: absolute;
+	display: block;
+	content: ' ';
+	width: 16px;
+	height: 16px;
+	right: 5px;
+	top: 11px;
+	overflow: hidden;
+	font-size: 0;
+	color: transparent;
+	background: url('../img/icons/search-eee-16.png') no-repeat center center;
+}
+
+#Main #TopBar .filter-buttons {
+	display: inline-block;
+}
+
+#Main #TopBar .filter-buttons button {
+	background: transparent;
+	border: solid 1px transparent;
+	color: #333;
+}
+
+#Main #TopBar .filter-buttons button:hover,
+#Main #TopBar .filter-buttons button:focus {
+	border: solid 1px #105fa3;
+	color: #105fa3;
+}
+
+#Main #TopBar .filter-buttons button.selected {
+	background: #1784e3;
+	background: linear-gradient(#1784e3, #105fa3);
+	border: solid 1px #105fa3;
+	color: #fff;
+}
+
+/* Mid Panel */
+#Main #MidPanel {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: auto;
+	padding: 20px;
+}
+
+#Main #MidPanel.has-top {
+	top: 40px;
+}
+
+#Main #MidPanel.has-bottom {
+	bottom: 40px;
+}
+
+/* Bottom Bar */
+#Main #BottomBar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 40px;
+	background: #aaa;
+	background: linear-gradient(#bbb, #999);
+	box-shadow: 0 1px 5px #888;
+	z-index: 2;
+	line-height: 40px;
+}
+
+#Main #BottomBar .right-panel {
+	float: right;
+	padding: 0 20px 0 0;
+}
+
+#Main #BottomBar .left-panel {
+	float: left;
+	padding: 0 0 0 20px;
+}

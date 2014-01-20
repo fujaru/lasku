@@ -1,0 +1,27 @@
+/**
+ * Stylesheet for Dashboard page
+ * 
+ * @author Fajar Chandra
+ * @since  0.1.0
+ */
+
+.section {
+	background: #aaa;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
+.section h2:first-child {
+	margin: 0;
+	padding: 5px 10px 0 10px;
+	font-size: 1em;
+	color: #eee;
+	cursor: default;
+}
+
+.section table.table tr td:first-child {
+	border-left: solid 1px #aaa;
+}
+.section table.table tr td:last-child {
+	border-right: solid 1px #aaa;
+}

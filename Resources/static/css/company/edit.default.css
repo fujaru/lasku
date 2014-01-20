@@ -1,0 +1,28 @@
+/**
+ * Stylesheet for Company Editor
+ * 
+ * @author  Fajar Chandra
+ * @since   0.1.0
+ */
+
+.BasicInfo {
+	float: left;
+	width: 50%;
+	margin-right: 20px;
+}
+
+.ContactInfo table.form,
+.BasicInfo table.form {
+	width: 100%;
+}
+
+.ContactInfo table.form th,
+.BasicInfo table.form th {
+	width: 150px;
+}
+
+.ContactInfo input,
+.BasicInfo input {
+	width: 100%;
+	box-sizing: border-box;
+}

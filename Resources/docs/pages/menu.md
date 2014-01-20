@@ -21,7 +21,7 @@
 	* Tax
 	* Email Templates
 	* User Accounts
-	* Themes
+	* Skins
 	* Branding
 <br /><br />
 * Developer Guide
@@ -29,6 +29,12 @@
 	* Extensions
 	* Web Services
 	* Localization
-	* [System Reference](dev/reference)
+	* [Skinning](dev/skin)
 <br /><br />
 * [FAQ](faq)
+<br /><br />
+* Internal System
+	* [Introduction](system/intro)
+	* Frameworks
+	* [Default UX](system/ux)
+	* [API Reference](system/api)

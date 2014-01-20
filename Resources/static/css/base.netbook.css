@@ -1,0 +1,35 @@
+/**
+ * Base Lasku Stylesheet adjusted for netbook screen
+ * 
+ * @author  Fajar Chandra
+ * @since   0.1.0
+ */
+
+#NavBar > .right-side {
+	float: none;
+	clear: left;
+	border-top: solid 1px #666;
+	background: #555;
+}
+
+#NavBar > .right-side .menu {
+	line-height: 30px;
+	font-size: 12px;
+}
+
+#NavBar > .right-side .menu > li:hover > a,
+#NavBar > .right-side .menu > li > a:hover,
+#NavBar > .right-side .menu > li.selected > a,
+#NavBar > .right-side .menu > li.selected > span {
+	background: #777;
+}
+
+#NavBar > .right-side .menu > li > ul {
+	top: 30px;
+	left: 0;
+	right: auto;
+}
+
+#Main {
+	top: 70px;
+}

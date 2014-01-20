@@ -1,0 +1,12 @@
+/**
+ * Meta CSS for Base Lasku Stylesheets
+ * 
+ * @author  Fajar Chandra
+ * @since   0.1.0
+ */
+
+/* Default CSS */
+@import url('base.default.css');
+
+/* narrow screen CSS */
+@import url('base.netbook.css') (max-width: 980px);

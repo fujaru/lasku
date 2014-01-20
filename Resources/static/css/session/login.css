@@ -1,0 +1,12 @@
+/**
+ * Meta-CSS for Login Template.
+ * 
+ * @author  Fajar Chandra
+ * @since   0.1.0
+ */
+
+/* Default CSS */
+@import url('login.default.css');
+
+/* Mobile device */
+@import url('login.mobile.css') (-webkit-min-device-pixel-ratio: 1.25);

@@ -1,0 +1,12 @@
+/**
+ * Meta CSS for Default application stylesheet
+ * 
+ * @author Fajar Chandra
+ * @since  0.1.0
+ */
+
+/* Default CSS */
+@import url('default.default.css');
+
+/* Narrow display */
+@import url('default.netbook.css') (max-width: 980px);

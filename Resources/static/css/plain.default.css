@@ -1,0 +1,25 @@
+/**
+ * Stylesheet for Plain Template.
+ * 
+ * @author  Fajar Chandra
+ * @since   0.1.0
+ */
+
+/* SPECIFIC IDS
+ * ****************************************************************** */
+#FlashMessage {
+	top: 18px;
+}
+ 
+.Main-outer-wrapper {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+#Main {
+	top: 0;
+	margin: 20px;
+}

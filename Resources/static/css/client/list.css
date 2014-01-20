@@ -1,0 +1,12 @@
+/**
+ * Meta CSS for Client List
+ * 
+ * @author  Fajar Chandra
+ * @since   0.1.0
+ */
+
+/* Default CSS */
+@import url('list.default.css');
+
+/* Narrow display */
+@import url('list.netbook.css') (max-width: 980px);

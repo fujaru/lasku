@@ -1,0 +1,14 @@
+/**
+ * Stylesheet for Company Profile page
+ * 
+ * @author Fajar Chandra
+ * @since  0.1.0
+ */
+.section .label {
+	font-weight: bold;
+	border-bottom: solid 1px #888;
+}
+
+.section .value {
+	margin-bottom: 10px;
+}

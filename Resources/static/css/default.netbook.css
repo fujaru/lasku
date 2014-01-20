@@ -1,0 +1,23 @@
+/**
+ * Default application stylesheet
+ * Adjustments for netbook
+ * 
+ * @author Fajar Chandra
+ * @since  0.1.0
+ */
+
+/* Nav Bar */
+#NavBar .menu > li > a.icon {
+	color: #eee;
+	font-size: 1em;
+	line-height: 30px;
+	width: auto;
+	background: none;
+}
+
+#NavBar .menu > li.selected > a.icon,
+#NavBar .menu > li:hover > a.icon,
+#NavBar .menu > li > a.icon:hover {
+	background-color: #666;
+	color: #fff;
+}

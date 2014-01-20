@@ -1,0 +1,12 @@
+/**
+ * Meta CSS for Company Editor
+ * 
+ * @author  Fajar Chandra
+ * @since   0.1.0
+ */
+
+/* Default CSS */
+@import url('edit.default.css');
+
+/* Narrow display */
+@import url('edit.netbook.css') (max-width: 980px);

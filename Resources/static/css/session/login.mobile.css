@@ -1,0 +1,17 @@
+/**
+ * Adjustments for Mobile Browsers
+ * Login Template
+ * 
+ * @author  Fajar Chandra
+ * @since   0.1.0
+ */
+
+#LoginFormContainer > .wrapper {
+	padding: 20px;
+	width: auto;
+	margin: auto;
+}
+
+#LoginFormContainer table.form {
+
+}

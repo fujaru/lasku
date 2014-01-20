@@ -1,0 +1,135 @@
+/**
+ * Stylesheet for Client List
+ * 
+ * @author  Fajar Chandra
+ * @since   0.1.0
+ */
+
+#ClientDetails {
+	position: fixed;
+	right: 20px;
+	top: 100px;
+	left: 60%;
+	bottom: 20px;
+	padding: 20px;
+	overflow: auto;
+	background: #f8f8f8;
+	border: solid 2px #666;
+	box-shadow: 1px 1px 4px #666;
+	border-radius: 5px;
+	display: none;
+}
+
+#ClientDetails .Heading {
+	background: #666;
+	margin: -20px -20px 20px -20px;
+	padding: 10px 70px 10px 20px;
+	position: relative;
+	color: #eee;
+	height: 28px;
+}
+
+#ClientDetails .Heading .button-list {
+}
+
+#ClientDetails .Heading h2 {
+	margin: 0;
+	line-height: 28px;
+}
+
+#ClientDetails .Heading #DetailsCloseBtn {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: #666;
+	border: none;
+	font-size: 20px;
+	line-height: 30px;
+	padding: 0;
+	width: 30px;
+	height: 30px;
+	border-radius: 0 5px;
+}
+
+#ClientDetails .Heading #DetailsCloseBtn:focus,
+#ClientDetails .Heading #DetailsCloseBtn:hover {
+	background: #888;
+}
+
+#ClientDetails .Links {
+	position: relative;
+	margin: -20px -20px 20px -20px;
+	padding: 0 0;
+	background: #888;
+	cursor: default;
+}
+
+#ClientDetails .Links button {
+	background: none;
+	border: none;
+	box-shadow: none;
+	border-radius: 0;
+	border-left: solid 1px transparent;
+	border-right: solid 1px transparent;
+	padding: 0 20px;
+}
+
+#ClientDetails .Links button:hover {
+	background: #aaa;
+	border-left: solid 1px #666;
+	border-right: solid 1px #b0b0b0;
+}
+
+#ClientDetails .Links button.delete:hover {
+	background: #E3726B;
+}
+
+#ClientDetails .Links .status {
+	position: absolute;
+	right: 0;
+	top: 0;
+	line-height: 28px;
+	padding: 0 20px 0 60px;
+	border-radius: 0;
+}
+
+#ClientDetails .Links .status.active {
+	background: linear-gradient(to right, #888, #5fa310 40px, #5fa310);
+}
+
+#ClientDetails .Links .status.inactive {
+	background: linear-gradient(to right, #888, #e32417 40px, #e32417);
+}
+
+#ClientDetails .Content {
+	position: absolute;
+	top: 76px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 20px;
+	overflow: auto;
+}
+
+#ClientDetails .Content h3 {
+	border-bottom: solid 2px #666;
+}
+
+#ClientDetails .label {
+	font-size: .9em;
+	font-weight: bold;
+	border-bottom: solid 1px #666;
+}
+
+#ClientDetails .value {
+	margin-bottom: 10px;
+}
+
+#ClientList.HasDetails {
+	margin-right: 40%;
+	padding-right: 20px;
+}
+
+#ClientList tr td {
+	cursor: pointer;
+}
