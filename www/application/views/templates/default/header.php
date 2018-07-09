@@ -54,7 +54,7 @@
 	
 	<div class="right-side">
 		<ul class="menu">
-			<li><a href="<?=URL::site('session/logout')?>" title="Logout">Mr Bean</a></li>
+			<li><a href="<?=URL::site('user/profile')?>">Mr Bean</a></li>
 			<li class="<?= @$menu == 'admin' ? 'selected' : '' ?>">
 				<a title="Administration" class="icon admin">Administration</a>
 				<ul>
